@@ -41,7 +41,7 @@ class TaskManager {
                 title: "Title "+ i,
                 details: "dkgjkljjkl",
                 assignedTo: "dkgjkljjkl",
-                dueDate: new Date(2021, 9, i+1),
+                dueDate:  new Date(2021, 9, i+1).toISOString().slice(0,10),
                 status: statuses[i%4],
             };
 

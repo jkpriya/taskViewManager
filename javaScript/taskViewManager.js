@@ -56,7 +56,7 @@ class TaskViewManager {
         formElements["task-title"].value = taskObj.title;
         formElements["task-details"].value = taskObj.details;
         formElements["task-assigned-to"].value = taskObj.assignedTo;
-        formElements["task-due-date"].value = new Date(taskObj.dueDate);
+        formElements["task-due-date"].value = taskObj.dueDate;
         formElements["task-status"].value = taskObj.status;
     }
 
@@ -74,9 +74,7 @@ class TaskViewManager {
         <!-- Card content -->
         <div class="card-body" >
             <!-- Title -->
-            <h4 class="card-title"><a>${taskObj.title}</a></h4>
-            <!-- TaskId -->
-            <h4><a>${taskObj.taskId}</a></h4>
+            <h4 class="card-title">${taskObj.taskId}: ${taskObj.title}</h4>
             <!-- Text -->
             <div class="card-text taskDescription">
                 <label for="cardLabelDescription">Task Description: </label>
@@ -90,7 +88,7 @@ class TaskViewManager {
             <!-- Due Date -->
             <div class="card-text duedate">
                 <label for="cardLabelDueDate">DueDate: </label>
-                <p class="cardDueDateValue"> ${taskObj.dueDate}</p>
+                <p class="cardDueDateValue"> ${new Date(taskObj.dueDate).toLocaleDateString("en-GB")}</p>
             </div>
             <!-- Status -->
             <div class="card-text status">
